@@ -1,3 +1,16 @@
+<<<<<<< Updated upstream
+=======
+/* Definición de colores como variables */
+:root {
+  --color-1: #013b58ff;
+  --color-2: #c74d3aff;
+  --color-3: #013b5cff;
+  --color-4: #fbfdfcff;
+  --color-5: #fdfdfdff;
+}
+
+/* Estilos generales y disposición de la página */
+>>>>>>> Stashed changes
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -28,6 +41,27 @@ ul {
   grid-row: 2;
   border: solid 2px black;
   grid-area: menu;
+<<<<<<< Updated upstream
+=======
+  background-color: var(--color-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+  height: 200px;
+}
+
+/* Estilos para la barra de búsqueda */
+.search {
+  grid-area: search;
+  background-color: var(--color-1);
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+  grid-area: main-content;
+>>>>>>> Stashed changes
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -155,11 +189,16 @@ ul {
   font-size: 20px;
   border: solid 2px black;
   grid-area: footer;
+<<<<<<< Updated upstream
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #0067b9;
+=======
+  color: red;
+  background-color: var(--color-1);
+>>>>>>> Stashed changes
 }
 
 @media (min-width: 576px) {
@@ -257,6 +296,7 @@ ul {
   }
 }
 
+<<<<<<< Updated upstream
 @keyframes spark-one-motion {
   0% {
     transform: translate(-20%, 50%);
@@ -274,6 +314,25 @@ ul {
     transform: rotate(-360deg) translate(30px, 100%);
     animation-timing-function: cubic-bezier(0.64, 0.66, 0, 0.51);
   }
+=======
+/* Estilos para la tarjeta del producto */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  width: 200px;
+  padding: 20px;
+  height: 350px;
+  margin: 10px;
+  transition: transform 0.3s; /* Agrega una transición suave al transformar el elemento */
+}
+
+.product-card:hover {
+  transform: scale(
+    1.03
+  ); /* Aumenta el tamaño del elemento un 5% cuando se pasa el mouse sobre él */
+>>>>>>> Stashed changes
 }
 
 .spark:nth-child(2) {
@@ -516,7 +575,67 @@ ul {
   stroke-width: 3;
 }
 
+<<<<<<< Updated upstream
 #results {
   grid-area: results;
   background: hsl(0, 0%, 95%);
+=======
+.nav-button {
+  display: block;
+  color: var(--color-2);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: var(--color-5);
+}
+
+/* Estilos para la barra de búsqueda */
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-button {
+  padding: 10px;
+  border: none;
+  background-color: var(--color-2);
+  color: var(--color-6);
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-button:hover {
+  background-color: var(--color-3);
+}
+
+/* Estilos para el pie de página */
+.footer {
+  background-color: var(--color-5);
+  color: var(--color-6);
+  text-align: center;
+  padding: 10px;
+}
+
+.github-link {
+  color: var(--color-3);
+  text-decoration: none;
+}
+
+.github-link:hover {
+  color: var(--color-2);
+>>>>>>> Stashed changes
 }
