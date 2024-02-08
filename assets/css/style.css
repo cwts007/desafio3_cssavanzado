@@ -1,0 +1,160 @@
+/* Definición de colores como variables */
+:root {
+  --color-1: #ff0000;
+  --color-2: #0000ff;
+  --color-3: #008000;
+  --color-4: #ffff00;
+  --color-5: #000000;
+  --color-6: #ffffff;
+  --color-7: #61dafb;
+  --color-8: #bbdefb;
+}
+
+/* Estilos generales y disposición de la página */
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 3fr;
+  grid-template-areas:
+    "menu search"
+    "menu main-content"
+    "footer footer";
+}
+
+/* Estilos para el menú */
+.menu {
+  grid-area: menu;
+  border: 2px solid var(--color-1);
+}
+
+/* Estilos para la barra de búsqueda */
+.search {
+  grid-area: search;
+  border: 2px solid var(--color-2);
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+  grid-area: main-content;
+  border: 2px solid var(--color-3);
+  display: flex;
+  padding: 20px;
+}
+
+/* Estilos para el pie de página */
+.footer {
+  grid-area: footer;
+  border: 2px solid var(--color-4);
+}
+
+/* Cambio de disposición para pantallas menores a 576px */
+@media (max-width: 576px) {
+  body {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "menu"
+      "search"
+      "main-content"
+      "footer";
+  }
+}
+
+/* Estilos para la tarjeta del producto */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 200px;
+  padding: 20px;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-description {
+  margin: 10px 0;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buy-button,
+.add-to-cart-button {
+  padding: 5px 10px;
+}
+
+/* Estilos para el menú de navegación */
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-5);
+}
+
+.nav-button {
+  display: block;
+  color: var(--color-6);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: var(--color-5);
+}
+
+/* Estilos para la barra de búsqueda */
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-button {
+  padding: 10px;
+  border: none;
+  background-color: #4caf50;
+  color: var(--color-6);
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el pie de página */
+.footer {
+  background-color: var(--color-5);
+  color: var(--color-6);
+  text-align: center;
+  padding: 10px;
+}
+
+.github-link {
+  color: var(--color-7);
+  text-decoration: none;
+}
+
+.github-link:hover {
+  color: var(--color-8);
+}
