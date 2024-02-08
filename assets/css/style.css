@@ -1,32 +1,51 @@
+/* Definición de colores como variables */
+:root {
+  --color-1: #ff0000;
+  --color-2: #0000ff;
+  --color-3: #008000;
+  --color-4: #ffff00;
+  --color-5: #000000;
+  --color-6: #ffffff;
+  --color-7: #61dafb;
+  --color-8: #bbdefb;
+}
+
+/* Estilos generales y disposición de la página */
 body {
   display: grid;
   height: 100vh;
-  grid-template-rows: 1fr auto;
-  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 3fr;
   grid-template-areas:
     "menu search"
     "menu main-content"
     "footer footer";
 }
 
+/* Estilos para el menú */
 .menu {
   grid-area: menu;
-  border: 2px solid red; /* Borde rojo */
+  border: 2px solid var(--color-1);
 }
 
+/* Estilos para la barra de búsqueda */
 .search {
   grid-area: search;
-  border: 2px solid blue; /* Borde azul */
+  border: 2px solid var(--color-2);
 }
 
+/* Estilos para el contenido principal */
 .main-content {
   grid-area: main-content;
-  border: 2px solid green; /* Borde verde */
+  border: 2px solid var(--color-3);
+  display: flex;
+  padding: 20px;
 }
 
+/* Estilos para el pie de página */
 .footer {
   grid-area: footer;
-  border: 2px solid yellow; /* Borde amarillo */
+  border: 2px solid var(--color-4);
 }
 
 /* Cambio de disposición para pantallas menores a 576px */
@@ -40,8 +59,9 @@ body {
       "main-content"
       "footer";
   }
-  /* tarjeta de producto y sus botones*/
 }
+
+/* Estilos para la tarjeta del producto */
 .product-card {
   display: flex;
   flex-direction: column;
@@ -70,19 +90,19 @@ body {
 .add-to-cart-button {
   padding: 5px 10px;
 }
-/* menu*/
 
+/* Estilos para el menú de navegación */
 .nav-menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--color-5);
 }
 
 .nav-button {
   display: block;
-  color: white;
+  color: var(--color-6);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -92,9 +112,10 @@ body {
 }
 
 .nav-button:hover {
-  background-color: #111;
+  background-color: var(--color-5);
 }
-/* barra de busqueda*/
+
+/* Estilos para la barra de búsqueda */
 .search-form {
   display: flex;
   justify-content: center;
@@ -112,7 +133,7 @@ body {
   padding: 10px;
   border: none;
   background-color: #4caf50;
-  color: white;
+  color: var(--color-6);
   cursor: pointer;
   border-radius: 0 5px 5px 0;
 }
@@ -120,19 +141,20 @@ body {
 .search-button:hover {
   background-color: #45a049;
 }
-/* footer */
+
+/* Estilos para el pie de página */
 .footer {
-  background-color: #333;
-  color: white;
+  background-color: var(--color-5);
+  color: var(--color-6);
   text-align: center;
   padding: 10px;
 }
 
 .github-link {
-  color: #61dafb;
+  color: var(--color-7);
   text-decoration: none;
 }
 
 .github-link:hover {
-  color: #bbdefb;
+  color: var(--color-8);
 }
