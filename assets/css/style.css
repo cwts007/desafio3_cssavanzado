@@ -1,6 +1,25 @@
+/* Define las variables de color */
+:root {
+  --color-fuente-menu: rgb(0, 0, 0);
+  --color-fondo-menu: rgb(192, 209, 255);
+  --color-fuente-busqueda: white;
+  --color-fondo-busqueda: black;
+  --color-fondo-principal: rgb(226, 226, 226);
+  --color-fuente-pie: white;
+  --color-fondo-pie: black;
+  --color-fondo-boton: blue;
+  --color-fuente-boton: white;
+  --color-fondo-tarjeta: white;
+  --color-borde-tarjeta: #ccc;
+  --color-fondo-hover: darkblue;
+}
+
+/* Define la fuente para todo el documento */
 body {
   font-family: "Roboto", sans-serif;
 }
+
+/* Define el diseño de cuadrícula para el contenedor */
 .gridcontainer {
   display: grid;
   grid-template-areas:
@@ -12,78 +31,85 @@ body {
   grid-template-rows: auto;
 }
 
-.menu {
-  background-color: rgb(192, 209, 255);
-  color: rgb(0, 0, 0);
-  grid-area: menu;
-
+/* Define los estilos para cada área de la cuadrícula */
+.menu,
+.busqueda,
+.principal,
+.pie {
   display: flex;
+  align-content: center;
+  padding: 20px;
+}
+
+.menu {
+  background-color: var(--color-fondo-menu);
+  color: var(--color-fuente-menu);
+  grid-area: menu;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
 }
 
 .busqueda {
-  background-color: black;
-  color: white;
-  display: flex;
-  align-content: center;
+  background-color: var(--color-fondo-busqueda);
+  color: var(--color-fuente-busqueda);
+  grid-area: busqueda;
   align-items: center;
   justify-content: center;
-  grid-area: busqueda;
-
-  padding: 20px;
 }
 
 .principal {
-  background-color: rgb(226, 226, 226);
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 30px;
+  background-color: var(--color-fondo-principal);
   grid-area: principal;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-
 .pie {
-  background-color: black;
-  color: white;
+  background-color: var(--color-fondo-pie);
+  color: var(--color-fuente-pie);
   grid-area: pie;
-
-  display: flex;
-  align-content: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.fa-solid {
-  text-decoration: none;
-}
+
+/* Define los estilos para la lista de menús y el menú oculto */
 .menu-list {
   display: none;
+  list-style-type: none;
+  padding: 0px;
 }
-
 .fa-solid:focus + .menu-list,
 .menu-list:hover {
   display: block;
 }
-
 .menu_oculto {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  padding: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
-
+.menu-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+}
 .menu-list li a {
   text-decoration: none;
+  color: var(--color-fuente-boton);
+  background-color: var(--color-fondo-boton);
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+.menu-list li a:hover {
+  background-color: var(--color-fondo-hover);
+  transform: scale(1.1);
+}
+/* Define los estilos para las tarjetas de productos */
 .product-card {
-  background-color: white;
+  background-color: var(--color-fondo-tarjeta);
   margin: 10px;
   padding: 10px;
   height: 350px;
@@ -91,30 +117,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-borde-tarjeta);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease;
 }
-
 .product-card:hover {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
-
 .product-card img {
   width: 100%;
   height: auto;
 }
 .product-card button {
-  background-color: blue;
-  color: white;
+  background-color: var(--color-fondo-boton);
+  color: var(--color-fuente-boton);
   border-radius: 10px;
 }
-
 .description {
   padding: 10px;
   text-align: center;
 }
-
 button {
   margin-top: 10px;
   padding: 5px 10px;
@@ -123,6 +145,31 @@ button {
   height: 200px;
   width: auto;
 }
+.productos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.pagination {
+  display: none;
+  justify-content: center;
+  padding: 20px 0;
+}
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+/* Define los estilos para pantallas más grandes */
 @media (min-width: 576px) {
   .gridcontainer {
     grid-template-areas:
@@ -131,46 +178,22 @@ button {
       "pie pie";
     grid-template-columns: 1fr 3fr;
   }
+
   .menu_oculto .fa-solid {
     display: none;
   }
+
   .menu-list {
     display: flex;
     flex-direction: column;
-    list-style-type: none;
-    padding: 0;
   }
+
   .menu_oculto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 20px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
   }
-}
-.menu-list {
-  list-style-type: none;
-  padding: 0px;
-}
-
-.menu-list li {
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-.menu-list li a {
-  text-decoration: none;
-  color: white;
-  background-color: blue;
-  padding: 10px 20px;
-  border-radius: 15px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  
-}
-
-.menu-list li a:hover {
-  background-color: darkblue;
-  transform: scale(1.1);
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
 }
