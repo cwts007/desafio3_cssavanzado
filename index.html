@@ -37,10 +37,18 @@
     </aside>
     <section class="busqueda">
       <form action="" method="get">
+        <input type="button" value="Ordenar por" />
+        <select name="ordenar_por">
+          <option value="precio">Precio</option>
+          <option value="stock">Stock</option>
+          <option value="recomendaciones">Recomendaciones</option>
+          <option value="valoraciones">Valoraciones</option>
+        </select>
         <input type="search" name="q" placeholder="Busca tu producto" />
         <input type="submit" value="Buscar" />
       </form>
     </section>
+
     <main class="principal">
       <div class="productos">
         <div class="product-card">
